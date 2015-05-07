@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 import timesheet.model.EsystemsModel;
 import timesheet.model.WeeklyHours;
-import timesheet.util.OCRUtil;
+import timesheet.util.TimesheetUtil;
 
 public class ESystems implements Vendor {
 	
@@ -36,7 +36,7 @@ public class ESystems implements Vendor {
 		String mtName = ".process - ";
 		System.out.println(clName+mtName+"start");
 		
-		HashMap<String, String> map = OCRUtil.splitBasedOnPatternList(data, pattern);
+		HashMap<String, String> map = TimesheetUtil.splitBasedOnPatternList(data, pattern);
 		System.out.println(clName+mtName+map);
 		
 		EsystemsModel model = new EsystemsModel();

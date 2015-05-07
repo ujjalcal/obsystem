@@ -3,7 +3,7 @@ package timesheet.vendors;
 import timesheet.model.WeeklyHours;
 
 public class AmtexSystems implements Vendor {
-	public static final String vendorName = "Amtex Systems";
+	public static final String vendorName = "AmtexSystems";
 	public final String sample = "Amtex Systems Employee Name (Printed): BRANCH OFFICE TIMESHEET BRANCH OFFICE PHONE: CHARGEABLE HOURS: Ujjal Bhattacharjee Pay Period Endin Consultant's Work Ph 4/4/2015 FAX: 212-269-6458 212-269-6448 609-455-0028 Client Name Project Num Hours Type Activity Code Client Bill Rate Type Week 1 Week 2 Total Hours Client Approval P&L Client Proj Sat Sun Mon Tue Wed Thu Fri Sat Sun Mon Tue Wed Thu Fri C S 8 8 8 8 8 40 C 0 C 0 C 0 C 0 C 0 C 0 C 0 C 0 TOTAL CHARGEABLE 0 0 8 8 8 8 8 0 0 0 0 0 0 0 40 NON-CHARGEABLE HOURS: N/A 0 N/A 0 N/A 0 N/A 0 N/A 0 N/A 0 TOTAL NON-CHARGEABLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 GRAND TOTAL 0 0 8 8 8 8 8 0 0 0 0 0 0 0 40 Hours Types - Chargeable Hours Types - Non-Chargeable Activity Codes - Non-Chargeable * 10 Standard 10 Standard B Bench For Branch Management Use: 11 EWW * / Paid Overtime (Approval 11 Paid Overtime (Approval Required) T Training 21 Non-Billable (Approval Required) 31 Vacation A Administrative 0/T Approval: 22 Client Short Hours 32 Sick Leave S Sales & Marketing Activity Codes - Chargeable 33 Holidays R Recruiting ";
 	private static final String startPattern = "TOTAL CHARGEABLE";
 	private static final String endPattern = "NON-CHARGEABLE";

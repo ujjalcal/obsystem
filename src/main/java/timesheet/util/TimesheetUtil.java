@@ -2,7 +2,7 @@ package timesheet.util;
 
 import java.util.HashMap;
 
-public class OCRUtil {
+public class TimesheetUtil {
 	private static final String clName = "OCRUtil";
 	
 	public static HashMap<String, String> splitBasedOnPatternList(String data, String pattern[])

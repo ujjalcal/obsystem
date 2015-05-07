@@ -19,9 +19,6 @@
 <runtimeClasspathEntry containerPath="M2_REPO/org/apache/tomcat/tomcat-servlet-api/7.0.29/tomcat-servlet-api-7.0.29.jar" path="3" type="2"/> 
 "/>
 <listEntry value="<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
-<runtimeClasspathEntry containerPath="M2_REPO/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.29/tomcat-embed-jasper-7.0.29.jar" path="3" type="2"/> 
-"/>
-<listEntry value="<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
 <runtimeClasspathEntry id="org.eclipse.jdt.launching.classpathentry.defaultClasspath"> 
 <memento exportedEntriesOnly="false" project="ts-app-war"/> 
 </runtimeClasspathEntry> 

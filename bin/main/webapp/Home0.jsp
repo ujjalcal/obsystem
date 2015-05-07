@@ -58,8 +58,10 @@
 	}%>
 		<%
 			ArrayList<String> companyList = new ArrayList();
-			companyList.add("ESystems 1");
-			companyList.add("ESystems 2");
+			companyList.add("ESystems");
+			companyList.add("AmtexSystems");
+			companyList.add("Amdocs");
+			companyList.add("OffspringSystems");
 		%>
 		<!-- 		<form action="DisplayFile"> -->
 		<!-- 			<h4>Please enter a path to display all the PDF files</h4> -->

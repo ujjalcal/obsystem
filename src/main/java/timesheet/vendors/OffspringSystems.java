@@ -4,7 +4,7 @@ import timesheet.model.WeeklyHours;
 
 public class OffspringSystems implements Vendor {
 
-	public static final String vendorName = "Offspring Systems";
+	public static final String vendorName = "OffspringSystems";
 	private static final String startPattern = "";
 	private static final String endPattern = "Yes";
 	

@@ -23,6 +23,8 @@ import org.apache.tika.parser.pdf.PDFParser;
 import org.apache.tika.sax.BodyContentHandler;
 import org.xml.sax.ContentHandler;
 
+import timesheet.process.ProcessTimesheet;
+
 public class UploadServlet extends HttpServlet {
 
 	/**
@@ -133,7 +135,7 @@ public class UploadServlet extends HttpServlet {
 				      PDFParser pdfparser = new PDFParser();
 				      pdfparser.parse(fi.getInputStream(), contenthandler, metadata, new ParseContext());
 				      */
-					String output = ReadYourOwnPDFFile.parsePdf(filePath + "/"+ fileName, outputFileName);
+					String output = ProcessTimesheet.process(companyName, filePath + "/"+ fileName, outputFileName);
 				  	  request.setAttribute("Output", output);
 				  	  
 				  	RequestDispatcher requestDispatcher = request

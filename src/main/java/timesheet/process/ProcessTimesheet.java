@@ -10,7 +10,7 @@ import timesheet.vendors.VendorFactory;
 
 public class ProcessTimesheet {
 	
-	private static boolean prod = true;
+	private static boolean prod = false;
 	private static final String clName = "ProcessTimesheet";
 
 	

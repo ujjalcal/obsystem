@@ -1,0 +1,7 @@
+body {background: #ffffff; margin: 0; padding: 0;} 
+a {color: #2b2bf6;}           
+#container {width: 1400px; margin: 0; padding: 0; background: #5F9EA0;}           
+#header {width: 1400px; 	height: 150px; 	margin: 0; padding: 0; border: 0; background: #416C6E;}           
+#sidebar {width: 200px; height: 400px; 	margin: 0; padding: 0; border: 0; float: left; background: #0B393B;}           
+#content {width: 1200px; height: 400px; 	margin: 0; padding: 0; border: 0; float: left; background: #5F9EA0;}           
+#footer {width: 1400px; 	height: 90px; 	margin: 0; padding: 0; border: 0; float: left; background: #416C6E; clear:both;}                            

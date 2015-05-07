@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+ 
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="HelloServlet/src/main/java/demo/launcher/DemoLauncher.java"/>
+</listAttribute>
+ 
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+  
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+ 
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<runtimeClasspathEntry containerPath="org.eclipse.jdt.launching.JRE_CONTAINER" javaProject="ServletExample" path="1" type="4"/> 
+"/>
+<listEntry value="<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<runtimeClasspathEntry containerPath="M2_REPO/org/apache/tomcat/tomcat-servlet-api/7.0.29/tomcat-servlet-api-7.0.29.jar" path="3" type="2"/> 
+"/>
+<listEntry value="<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<runtimeClasspathEntry containerPath="M2_REPO/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.29/tomcat-embed-jasper-7.0.29.jar" path="3" type="2"/> 
+"/>
+<listEntry value="<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<runtimeClasspathEntry id="org.eclipse.jdt.launching.classpathentry.defaultClasspath"> 
+<memento exportedEntriesOnly="false" project="ts-app-war"/> 
+</runtimeClasspathEntry> 
+"/>
+</listAttribute>
+
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/> 
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="demo.launcher.DemoLauncher"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ts-app-war"/>
+ 
+</launchConfiguration>

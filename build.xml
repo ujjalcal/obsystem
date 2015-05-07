@@ -1,0 +1,43 @@
+<project>
+	<property name="settings.localRepository" location="${user.home}/.m2/repository" />
+	
+	<target name="tsapp-downloads.war">
+		<copy file="target/HelloServlet.war" tofile="tsapp.war" />
+		<war destfile="target/tsapp-downloads.war" needxmlfile="false">
+			<fileset dir="target" includes="tsapp.war" />
+			<fileset file="target/tsapp-standalone.zip" />
+		</war>
+	</target>
+
+	<target name="standalone-zip">
+		<copy todir="target/tsapp-standalone" verbose="true">
+			<fileset dir="." includes="*.bat" />
+			<fileset dir="." includes="*.launch"/>
+			<fileset dir="." includes="*.project"/>
+		</copy>
+
+		<unwar dest="target/tsapp-standalone/tsapp" src="target/HelloServlet.war" />
+		<copy todir="target/tsapp-standalone/lib">
+			<fileset file="${settings.localRepository}/org/apache/tomcat/embed/tomcat-embed-core/7.0.29/tomcat-embed-core-7.0.29.jar" />
+			<fileset file="${settings.localRepository}/org/apache/tomcat/tomcat-servlet-api/7.0.29/tomcat-servlet-api-7.0.29.jar" />
+			<fileset file="${settings.localRepository}/org/apache/tomcat/embed/tomcat-embed-logging-juli/7.0.29/tomcat-embed-logging-juli-7.0.29.jar" />
+			<!--<fileset file="${settings.localRepository}/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.29/tomcat-embed-jasper-7.0.29.jar" />-->
+			<fileset file="${settings.localRepository}/org/apache/tomcat/tomcat-dbcp/7.0.29/tomcat-dbcp-7.0.29.jar" />
+		</copy>
+		<copy todir="target/tsapp-standalone/launch-env">
+			<fileset dir="target/test-classes">
+				<include name="demo/launcher/*.*" />
+				<include name="tomcat-context.xml" />
+			</fileset>
+		</copy>
+		<copy todir="target/tsapp-standalone/src">
+			<fileset dir="src/main/java" />
+			<fileset dir="src/main/resources" />
+			<fileset dir="src/main/webapp" />
+			<fileset dir="src/test/java" />
+		</copy>
+
+		<zip destfile="target/tsapp-standalone.zip" basedir="target/tsapp-standalone">
+		</zip>
+	</target>
+</project>

@@ -1,5 +1,6 @@
 package timesheet.vendors;
 
+import timesheet.model.VendorModels;
 import timesheet.model.WeeklyHours;
 
 public class Amdocs implements Vendor {
@@ -14,12 +15,12 @@ public class Amdocs implements Vendor {
 	}
 
 	@Override
-	public String[] getSearchPattern() {
-		return new String[]{startPattern, endPattern};
-	}
-
+	public java.util.List<String> getSearchPatternList() {
+		return null;
+	};
+	
 	@Override
-	public WeeklyHours process(String data) {
+	public VendorModels process(String data) {
 		// TODO Auto-generated method stub
 		return null;
 	}

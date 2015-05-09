@@ -3,6 +3,7 @@ package timesheet.process;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
 
+import timesheet.model.VendorModels;
 import timesheet.model.WeeklyHours;
 import timesheet.vendors.ESystems;
 import timesheet.vendors.Vendor;
@@ -30,7 +31,7 @@ public class ProcessTimesheet {
 		String text = (prod==true?PDFBoxClient.parsePdf(inputFileName, outputFileName):vendor.getSample());
 		//System.out.println(mtName+"text-"+text.length()+"-"+text);
 		
-		WeeklyHours wh = vendor.process(text);
+		VendorModels wh = vendor.process(text);
 		
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(wh);

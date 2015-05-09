@@ -1,5 +1,6 @@
 package timesheet.vendors;
 
+import timesheet.model.VendorModels;
 import timesheet.model.WeeklyHours;
 
 public class AmtexSystems implements Vendor {
@@ -14,17 +15,18 @@ public class AmtexSystems implements Vendor {
 	}
 
 	@Override
-	public String[] getSearchPattern() {
-		return new String[] { startPattern, endPattern };
-	}
-
+	public java.util.List<String> getSearchPatternList() {
+		return null;
+		
+	};
+	
 	@Override
 	public String getSample() {
 		return sample;
 	}
 
 	@Override
-	public WeeklyHours process(String data) throws Exception {
+	public VendorModels process(String data) throws Exception {
 		System.out.println("AmtexSystems.process - start - "+data);
 
 		int start = data.indexOf(startPattern);
@@ -36,6 +38,7 @@ public class AmtexSystems implements Vendor {
 		String hours = data.substring(start + 16, end);
 		System.out.println(hours);
 
+		VendorModels model = new VendorModels();
 		// set hrs in WeeklyHours
 		WeeklyHours wh = new WeeklyHours();
 		String[] hoursArray = hours.split(" ");
@@ -81,6 +84,7 @@ public class AmtexSystems implements Vendor {
 			throw new Exception("AmtexSystems.process -Processing error of vendor " + vendorName+ "'s Timesheet. Requires manual intervention");
 		}
 
-		return wh;
+		model.setWeek(wh);
+		return model;
 	}
 }

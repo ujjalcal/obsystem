@@ -1,13 +1,16 @@
 package timesheet.vendors;
 
+import java.util.List;
+
+import timesheet.model.VendorModels;
 import timesheet.model.WeeklyHours;
 
 public interface Vendor {
 	
 	public String getVendorName();
-	public String[] getSearchPattern();
+	public List<String> getSearchPatternList();
 	public String getSample();
 	
-	public WeeklyHours process(String data) throws Exception; 
+	public VendorModels process(String data) throws Exception; 
 
 }

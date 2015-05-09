@@ -25,7 +25,7 @@ public class AmtexSystems implements Vendor {
 
 	@Override
 	public WeeklyHours process(String data) throws Exception {
-		System.out.println("AmtexSystems.process - start");
+		System.out.println("AmtexSystems.process - start - "+data);
 
 		int start = data.indexOf(startPattern);
 		int end = data.indexOf(endPattern);

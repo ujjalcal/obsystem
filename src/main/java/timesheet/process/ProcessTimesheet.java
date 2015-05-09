@@ -10,25 +10,25 @@ import timesheet.vendors.VendorFactory;
 
 public class ProcessTimesheet {
 	
-	private static boolean prod = false;
+	private static boolean prod = true;
 	private static final String clName = "ProcessTimesheet";
 
 	
 	public static String process(String companyName, String inputFileName, String outputFileName)throws Exception
 	{
-		String mtName = "process";
-		System.out.println(clName+mtName+" - vendorname - "+companyName+"-"+inputFileName+"-"+outputFileName);
+		String mtName = clName+".process - ";
+		System.out.println(mtName+"start");
+		System.out.println(mtName+"companyName - "+companyName+"-"+inputFileName+"-"+outputFileName);
 		
 		Vendor vendor = VendorFactory.getVendor(companyName);
-		System.out.println(clName+mtName+" - vendorname - "+vendor.getVendorName());
-		System.out.println(clName+mtName+" - start");
+		System.out.println(mtName+"vendorname - "+vendor.getVendorName());
 		
 		//call OCR Client
         //String text = (prod==true?OCRWebserviceClient.callOCR(inputFileName, outputFileName):vendor.getSample());
 		
 		//call PDFBox Impl
 		String text = (prod==true?PDFBoxClient.parsePdf(inputFileName, outputFileName):vendor.getSample());
-		System.out.println(clName+mtName+" - text-"+text.length()+"-"+text);
+		//System.out.println(mtName+"text-"+text.length()+"-"+text);
 		
 		WeeklyHours wh = vendor.process(text);
 		
@@ -40,12 +40,12 @@ public class ProcessTimesheet {
 /*	public String processByte(String companyName, byte[] inputFile, String outputFileName)throws Exception
 	{
 		String mtName = "processByte";
-		System.out.println(clName+mtName+" - vendorname - "+companyName+"-"+outputFileName);		
+		System.out.println(mtName+" - vendorname - "+companyName+"-"+outputFileName);		
 		Vendor vendor = VendorFactory.getVendor(companyName);
-		System.out.println(clName+mtName+" - vendorname - "+vendor.getVendorName());
-		System.out.println(clName+mtName+" - start");
+		System.out.println(mtName+" - vendorname - "+vendor.getVendorName());
+		System.out.println(mtName+" - start");
         String text = (prod==true?OCRWebserviceClient.callOCRBytes(inputFile, outputFileName):vendor.getSample());
-		System.out.println(clName+mtName+" - text-"+text.length()+"-"+text);
+		System.out.println(mtName+" - text-"+text.length()+"-"+text);
 		
 		WeeklyHours wh = vendor.process(text);
 		

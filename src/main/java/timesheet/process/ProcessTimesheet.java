@@ -29,13 +29,23 @@ public class ProcessTimesheet {
 		
 		//call PDFBox Impl
 		String text = (prod==true?PDFBoxClient.parsePdf(inputFileName, outputFileName):vendor.getSample());
+		text = (text != null?text.trim():null);
 		//System.out.println(mtName+"text-"+text.length()+"-"+text);
 		
-		VendorModels wh = vendor.process(text);
-		
-		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		String json = ow.writeValueAsString(wh);
-		return json;
+		VendorModels wh = null;
+		if(text != null && text.length()>0)
+		{
+			System.out.println(mtName+"text retrived from PDF is not null or blank ... start processing");
+			wh = vendor.process(text);
+			ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+			String json = ow.writeValueAsString(wh);
+			return json;
+		}
+		else
+		{
+			System.out.println(mtName+"text retrived from PDF is null or blank");
+			return null;
+		}
 	}
 
 /*	public String processByte(String companyName, byte[] inputFile, String outputFileName)throws Exception
